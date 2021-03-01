@@ -77,7 +77,7 @@ void help(int status)
 {
 	printf("%s %s (%s)\n", _PROGRAM_NAME, _PROGRAM_VERSION, _PROGRAM_URL);
 	printf("Usage: %s [OPTIONS] COUNT\n", _PROGRAM_NAME);
-	printf("COUNT should be between 10 and 65535\n", _PROGRAM_NAME);
+	printf("COUNT should be between 10 and 65535\n");
 	printf("%s\n", _PROGRAM_DESC);
 	printf("\nOptions:\n");
 	printf("   -v, --verbose           Explain what is being done.\n");
