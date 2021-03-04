@@ -27,7 +27,7 @@ mkdir -p %{buildroot}%{_bindir}
 install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files	
-%license LICENSE.txt
+%license LICENSE.md
 %{_bindir}/%{name}
 
 %changelog
