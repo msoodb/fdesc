@@ -30,7 +30,6 @@ install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 %license LICENSE.txt
 %{_bindir}/%{name}
 
-	
 %changelog
 * Wed Mar  3 2021 msoodb <masoud.bolhassani@gmail.com> - 0-1
 - First fdesc package
