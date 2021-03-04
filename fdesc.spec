@@ -5,7 +5,7 @@ Summary:        CLI tools to generarte fake description.
 
 License:        GPLv3+
 URL:            https://github.com/msoodb/fdesc
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make

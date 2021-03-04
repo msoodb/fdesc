@@ -1,5 +1,5 @@
 
-#cp fdesc/fdesc.spec ~/rpmbuild/SPECS/
+cp fdesc.spec ~/rpmbuild/SPECS/
 VERSION=0
 RELEASE=1
 tar -czvf archive/v$VERSION/fdesc-$VERSION.$RELEASE.tar.gz \
