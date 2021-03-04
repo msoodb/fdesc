@@ -13,6 +13,7 @@ rm -rf fdesc-$VERSION/*
 cp -r src fdesc-$VERSION/
 cp Makefile fdesc-$VERSION/
 cp README.md fdesc-$VERSION/
+cp LICENSE fdesc-$VERSION/
 
 
 tar -czvf archive/v$VERSION/fdesc-$VERSION.$RELEASE.tar.gz fdesc-$VERSION
