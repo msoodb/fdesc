@@ -24,7 +24,7 @@ cp archive/v$VERSION/fdesc-$VERSION.$RELEASE.tar.gz archive/v$VERSION/fdesc-$VER
 cp fdesc.spec ~/rpmbuild/SPECS/
 
 # """ Copy Source """
-cp archive/v$VERSION/fdesc-$VERSION.tar.gz ~/rpmbuild/SOURCES
+# cp archive/v$VERSION/fdesc-$VERSION.tar.gz ~/rpmbuild/SOURCES
 echo wget https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v$VERSION/fdesc-$VERSION.tar.gz
 
 # """ Download Source """
