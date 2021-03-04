@@ -3,5 +3,10 @@ C command line application generarte fake description.
 
 # build                 
 ```sh                
-$ cc -o fdesc fdesc.c
+$ make fdesc
+```
+
+# clean
+```sh                
+$ make clean
 ```
