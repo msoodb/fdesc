@@ -1,7 +1,7 @@
 Name:           fdesc
 Version:        0
 Release:        1%{?dist}
-Summary:        CLI tools to generarte fake description.
+Summary:        CLI tools to generate fake description
 
 License:        GPLv3+
 URL:            https://github.com/msoodb/fdesc
@@ -11,7 +11,7 @@ BuildRequires:  gcc
 BuildRequires:  make
 
 %description
-Fdesc tools get a number for characters count and generarte fake description.
+Fdesc tools get a number for characters count and generate fake description.
 
 %prep	
 %global _hardened_build 1
