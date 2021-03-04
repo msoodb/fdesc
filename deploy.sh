@@ -5,12 +5,13 @@ make clean
 
 # """ Create tar file """
 VERSION=0
-RELEASE=2
+RELEASE=1
 
 
 mkdir -p fdesc-$VERSION
 rm -rf fdesc-$VERSION/*
 cp -r src fdesc-$VERSION/
+cp -r man fdesc-$VERSION/
 cp Makefile fdesc-$VERSION/
 cp README.md fdesc-$VERSION/
 cp LICENSE fdesc-$VERSION/
