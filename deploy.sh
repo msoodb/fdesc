@@ -11,7 +11,7 @@ RELEASE=1
 mkdir -p fdesc-$VERSION
 rm -rf fdesc-$VERSION/*
 cp -r src fdesc-$VERSION/
-cp -r man fdesc-$VERSION/
+cp fdesc.1 fdesc-$VERSION/
 cp Makefile fdesc-$VERSION/
 cp README.md fdesc-$VERSION/
 cp LICENSE fdesc-$VERSION/
