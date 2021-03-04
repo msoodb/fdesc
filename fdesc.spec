@@ -1,32 +1,36 @@
 Name:           fdesc
-Version:        0.0.1
+Version:        0
 Release:        1%{?dist}
-Summary:        command line application generarte fake description.
+Summary:        CLI tools to generarte fake description.
 
 License:        GPLv3+
 URL:            https://github.com/msoodb/fdesc
-Source0:        fdesc-0.0.1.tar.gz
+Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
-Requires(post): info
-Requires(preun): info
+BuildRequires:  gcc
+BuildRequires:  make
 
 %description
-A command line application generarte fake description.
+Fdesc tools get a number for characters count and generarte fake description.
 
-%global debug_package %{nil}
+%prep	
+%global _hardened_build 1
+%autosetup
 
-%prep
-%setup
-
-%build
-make PREFIX=/usr %{?_smp_mflags}
+%build	
+export CFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags}"
+%make_build
 
 %install
-make PREFIX=/usr DESTDIR=%{?buildroot} install
+mkdir -p %{buildroot}%{_bindir}
+install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
-%clean
-make PREFIX=/usr DESTDIR=%{?buildroot} clean
-# rm -rf %{buildroot}
+%files	
+%license LICENSE.txt
+%{_bindir}/%{name}
 
-%files
-%{_bindir}/fdesc
+	
+%changelog
+* Wed Mar  3 2021 msoodb <masoud.bolhassani@gmail.com> - 0-1
+- First fdesc package
