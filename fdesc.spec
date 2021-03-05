@@ -27,10 +27,10 @@ mkdir -p %{buildroot}%{_bindir}
 install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
-%{_mandir}/%{name}.1
 %doc README.md
 %license LICENSE
 %{_bindir}/%{name}
+%{_mandir}/man1/%{name}.1
 
 %changelog
 * Wed Mar  3 2021 msoodb <masoud.bolhassani@gmail.com> - 0-1
