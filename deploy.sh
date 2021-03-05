@@ -24,3 +24,8 @@ echo  wget -O SOURCES/fdesc-$VERSION.tar.gz https://raw.githubusercontent.com/ms
 
 # """ Clean UP """
 rm -rf fdesc-$VERSION
+
+# """ Push "
+git add .
+git commit -m "deploy"
+git Push origin master
