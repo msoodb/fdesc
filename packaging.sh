@@ -22,6 +22,5 @@ copr-cli build fdesc ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
 koji build --scratch f35 SRPMS/fdesc-0-1.fc30.src.rpm
 
 # """ Submitting the package """
-# create a new bug in the Red Hat Bugzilla to ask for a package review
-
+# create a new bug in the Red Hat Bugzilla to ask for a package review https://bugzilla.redhat.com/show_bug.cgi?id=1935610
 

@@ -27,6 +27,7 @@ mkdir -p %{buildroot}%{_bindir}
 install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
+%{_mandir}/%{name}.1
 %doc README.md
 %license LICENSE
 %{_bindir}/%{name}
