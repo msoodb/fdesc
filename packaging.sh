@@ -6,8 +6,8 @@ RELEASE=1
 
 # """ rpm command """
 cd ~/rpmbuild
-wget https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec SPECS/
-wget https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v$VERSION/fdesc-$VERSION.tar.gz /SOURCES
+wget -O SPECS/fdesc.spec https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec
+wget -O SOURCES/fdesc-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v$VERSION/fdesc-$VERSION.tar.gz
 rpmlint SPECS/fdesc.spec
 rpmbuild -bs SPECS/fdesc.spec
 rpmlint SRPMS/fdesc-0-1.fc30.src.rpm
