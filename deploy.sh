@@ -28,4 +28,4 @@ rm -rf fdesc-$VERSION
 # """ Push "
 git add .
 git commit -m "deploy"
-git Push origin master
+git push origin master
