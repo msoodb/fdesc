@@ -26,7 +26,7 @@ export LDFLAGS="%{__global_ldflags}"
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_mandir}/man1
 install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
-install -p -m %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
+install -p -m 755 %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 %files
 %doc README.md
