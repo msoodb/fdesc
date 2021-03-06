@@ -1,3 +1,7 @@
+
+# This file is generated throw deploy process
+# DO NOT EDIT MANUALLY!
+
 rm -rf ~/rpmbuild
 rpmdev-setuptree
 wget -O ~/rpmbuild/SPECS/fdesc.spec https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec
