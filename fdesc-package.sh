@@ -3,7 +3,7 @@
 # DO NOT EDIT MANUALLY!
 # Copy this file in ~ and run it
 
-# cp "$NAME-package.sh" ~
+# cp fdesc-package.sh ~
 # cd ~
 # ./fdesc-package.sh
 

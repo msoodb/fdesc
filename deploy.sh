@@ -24,11 +24,6 @@ cp archive/v$VERSION/$NAME-$VERSION.$RELEASE.tar.gz archive/v$VERSION/$NAME-$VER
 # """ Clean UP """
 rm -rf $NAME-$VERSION
 
-# """ Push "
-git add .
-git commit -m "deploy"
-git push origin master
-
 # """ echo packagin command """
 touch $NAME-package.sh
 chmod 755 $NAME-package.sh
@@ -62,3 +57,9 @@ echo "rpmbuild -bb ~/rpmbuild/SPECS/$NAME.spec" >> $NAME-package.sh
 echo "rpmlint ~/rpmbuild/RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm" >> $NAME-package.sh
 echo "" >> $NAME-package.sh
 echo "" >> $NAME-package.sh
+
+
+# """ Push "
+git add .
+git commit -m "deploy"
+git push origin master
