@@ -3,23 +3,26 @@
 # """ Clean Project """
 make clean
 
-# """ Create tar file """
+# """ Variables """
+NAME=fdesc
 VERSION=0
 RELEASE=1
+TARGET=fc30
+ARCH=x86_64
 
-mkdir fdesc-$VERSION
-rm -rf fdesc-$VERSION/*
-cp -r src fdesc-$VERSION/
-cp fdesc.1 fdesc-$VERSION/
-cp Makefile fdesc-$VERSION/
-cp README.md fdesc-$VERSION/
-cp LICENSE fdesc-$VERSION/
-
-tar -czvf archive/v$VERSION/fdesc-$VERSION.$RELEASE.tar.gz fdesc-$VERSION
-cp archive/v$VERSION/fdesc-$VERSION.$RELEASE.tar.gz archive/v$VERSION/fdesc-$VERSION.tar.gz
+# """ Create tar file """
+mkdir $NAME-$VERSION
+rm -rf $NAME-$VERSION/*
+cp -r src $NAME-$VERSION/
+cp $NAME.1 $NAME-$VERSION/
+cp Makefile $NAME-$VERSION/
+cp README.md $NAME-$VERSION/
+cp LICENSE $NAME-$VERSION/
+tar -czvf archive/v$VERSION/$NAME-$VERSION.$RELEASE.tar.gz $NAME-$VERSION
+cp archive/v$VERSION/$NAME-$VERSION.$RELEASE.tar.gz archive/v$VERSION/$NAME-$VERSION.tar.gz
 
 # """ Clean UP """
-rm -rf fdesc-$VERSION
+rm -rf $NAME-$VERSION
 
 # """ Push "
 git add .
@@ -27,10 +30,13 @@ git commit -m "deploy"
 git push origin master
 
 # """ echo packagin command """
-echo  wget -O SPECS/fdesc.spec https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec
-echo  wget -O SOURCES/fdesc-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v$VERSION/fdesc-$VERSION.tar.gz
-echo  rpmlint SPECS/fdesc.spec
-echo  rpmbuild -bs SPECS/fdesc.spec
-echo  rpmlint SRPMS/fdesc-0-1.fc30.src.rpm
-echo  rpmbuild -bb SPECS/fdesc.spec
-echo  rpmlint RPMS/x86_64/fdesc-0-1.fc30.x86_64.rpm
+touch $NAME-packag.sh
+chmod 755 $NAME-packag.sh
+echo "" > $NAME-packag.sh
+echo  wget -O SPECS/$NAME.spec https://raw.githubusercontent.com/msoodb/$NAME/master/$NAME.spec >> $NAME-packag.sh
+echo  wget -O SOURCES/$NAME-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/$NAME/master/archive/v$VERSION/$NAME-$VERSION.tar.gz >> $NAME-packag.sh
+echo  rpmlint SPECS/$NAME.spec >> $NAME-packag.sh
+echo  rpmbuild -bs SPECS/$NAME.spec >> $NAME-packag.sh
+echo  rpmlint SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm >> $NAME-packag.sh
+echo  rpmbuild -bb SPECS/$NAME.spec >> $NAME-packag.sh
+echo  rpmlint RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm >> $NAME-packag.sh
