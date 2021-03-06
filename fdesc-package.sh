@@ -1,4 +1,5 @@
 
+
 # This file is generated throw deploy process
 # DO NOT EDIT MANUALLY!
 # Copy this file in ~ and run it
@@ -26,5 +27,6 @@ rpmlint ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
 # build and lint RPM
 rpmbuild -bb ~/rpmbuild/SPECS/fdesc.spec
 rpmlint ~/rpmbuild/RPMS/x86_64/fdesc-0-1.fc30.x86_64.rpm
+
 
 

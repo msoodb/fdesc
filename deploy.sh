@@ -27,37 +27,39 @@ rm -rf $NAME-$VERSION
 # """ echo packagin command """
 touch $NAME-package.sh
 chmod 755 $NAME-package.sh
-echo "" > $NAME-package.sh
-echo "# This file is generated throw deploy process" >> $NAME-package.sh
-echo "# DO NOT EDIT MANUALLY!" >> $NAME-package.sh
-echo "# Copy this file in ~ and run it" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# cp $NAME-package.sh ~" >> $NAME-package.sh
-echo "# cd ~" >> $NAME-package.sh
-echo "# ./$NAME-package.sh" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# setuptree" >> $NAME-package.sh
-echo "rm -rf ~/rpmbuild" >> $NAME-package.sh
-echo "rpmdev-setuptree" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# get spec and source" >> $NAME-package.sh
-echo "wget -O ~/rpmbuild/SPECS/$NAME.spec https://raw.githubusercontent.com/msoodb/$NAME/master/$NAME.spec" >> $NAME-package.sh
-echo "wget -O ~/rpmbuild/SOURCES/$NAME-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/$NAME/master/archive/v$VERSION/$NAME-$VERSION.tar.gz" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# lint spec" >> $NAME-package.sh
-echo "rpmlint ~/rpmbuild/SPECS/$NAME.spec" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# build and lint SRPM" >> $NAME-package.sh
-echo "rpmbuild -bs ~/rpmbuild/SPECS/$NAME.spec" >> $NAME-package.sh
-echo "rpmlint ~/rpmbuild/SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "# build and lint RPM" >> $NAME-package.sh
-echo "rpmbuild -bb ~/rpmbuild/SPECS/$NAME.spec" >> $NAME-package.sh
-echo "rpmlint ~/rpmbuild/RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
-echo "" >> $NAME-package.sh
+__usage="
 
+# This file is generated throw deploy process
+# DO NOT EDIT MANUALLY!
+# Copy this file in ~ and run it
+
+# cp $NAME-package.sh ~
+# cd ~
+# ./$NAME-package.sh
+
+
+# setuptree
+rm -rf ~/rpmbuild
+rpmdev-setuptree
+
+# get spec and source
+wget -O ~/rpmbuild/SPECS/$NAME.spec https://raw.githubusercontent.com/msoodb/$NAME/master/$NAME.spec
+wget -O ~/rpmbuild/SOURCES/$NAME-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/$NAME/master/archive/v$VERSION/$NAME-$VERSION.tar.gz
+
+# lint spec
+rpmlint ~/rpmbuild/SPECS/$NAME.spec
+
+# build and lint SRPM
+rpmbuild -bs ~/rpmbuild/SPECS/$NAME.spec
+rpmlint ~/rpmbuild/SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm
+
+# build and lint RPM
+rpmbuild -bb ~/rpmbuild/SPECS/$NAME.spec
+rpmlint ~/rpmbuild/RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm
+
+
+"
+echo "$__usage" > $NAME-package.sh
 
 # """ Push "
 git add .
