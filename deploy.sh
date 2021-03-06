@@ -7,7 +7,7 @@ make clean
 NAME=fdesc
 VERSION=0
 RELEASE=1
-TARGET=fc30
+TARGET=fc32
 ARCH=x86_64
 
 # """ Create tar file """
@@ -58,6 +58,7 @@ rpmlint ~/rpmbuild/RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm
 
 # Building in Copr
 copr-cli build $NAME ~/rpmbuild/SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm
+# sudo dnf copr enable msoodb/fdesc fedora-32-x86_64
 
 "
 echo "$__package" > $NAME-package.sh

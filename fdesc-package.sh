@@ -21,13 +21,14 @@ rpmlint ~/rpmbuild/SPECS/fdesc.spec
 
 # build and lint SRPM
 rpmbuild -bs ~/rpmbuild/SPECS/fdesc.spec
-rpmlint ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
+rpmlint ~/rpmbuild/SRPMS/fdesc-0-1.fc32.src.rpm
 
 # build and lint RPM
 rpmbuild -bb ~/rpmbuild/SPECS/fdesc.spec
-rpmlint ~/rpmbuild/RPMS/x86_64/fdesc-0-1.fc30.x86_64.rpm
+rpmlint ~/rpmbuild/RPMS/x86_64/fdesc-0-1.fc32.x86_64.rpm
 
 # Building in Copr
-copr-cli build fdesc ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
+copr-cli build fdesc ~/rpmbuild/SRPMS/fdesc-0-1.fc32.src.rpm
+# sudo dnf copr enable msoodb/fdesc fedora-32-x86_64
 
 
