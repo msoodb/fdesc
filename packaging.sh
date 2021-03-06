@@ -1,20 +1,5 @@
 #!/bin/bash
 
-# """ Create tar file """
-VERSION=0
-RELEASE=1
-
-# """ rpm command """
-cd ~/rpmbuild
-wget -O SPECS/fdesc.spec https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec
-wget -O SOURCES/fdesc-$VERSION.tar.gz https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v$VERSION/fdesc-$VERSION.tar.gz
-rpmlint SPECS/fdesc.spec
-rpmbuild -bs SPECS/fdesc.spec
-rpmlint SRPMS/fdesc-0-1.fc30.src.rpm
-rpmbuild -bb SPECS/fdesc.spec
-rpmlint RPMS/x86_64/fdesc-0-1.fc30.x86_64.rpm
-
-
 # """ Building in Copr and Koji """
 # Create a Copr repository for fdesc https://copr.fedorainfracloud.org/coprs/msoodb/fdesc/
 # Config Copr-cli with apikey https://copr.fedorainfracloud.org/api/
