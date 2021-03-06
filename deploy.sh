@@ -24,11 +24,6 @@ cp archive/v$VERSION/$NAME-$VERSION.$RELEASE.tar.gz archive/v$VERSION/$NAME-$VER
 # """ Clean UP """
 rm -rf $NAME-$VERSION
 
-echo ""
-echo "# cp $NAME-package.sh ~"
-echo "# cd ~"
-echo "# ./$NAME-package.sh"
-
 # """ echo packagin command """
 touch $NAME-package.sh
 chmod 755 $NAME-package.sh
@@ -68,3 +63,11 @@ echo "" >> $NAME-package.sh
 git add .
 git commit -m "deploy"
 git push origin master
+
+# """ Package commands"
+echo ""
+echo ""
+echo "# cp $NAME-package.sh ~"
+echo "# cd ~"
+echo "# ./$NAME-package.sh"
+echo ""
