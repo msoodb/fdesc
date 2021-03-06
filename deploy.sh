@@ -31,7 +31,7 @@ git push origin master
 
 # """ echo packagin command """
 touch $NAME-package.sh
-chmod 755 $NAME-packag.sh
+chmod 755 $NAME-package.sh
 echo "" > $NAME-package.sh
 echo "# This file is generated throw deploy process" >> $NAME-package.sh
 echo "# DO NOT EDIT MANUALLY!" >> $NAME-package.sh
