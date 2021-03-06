@@ -1,13 +1,11 @@
 
-
-"
-This file is generated throw deploy process
-DO NOT EDIT MANUALLY!
-Copy this file in ~ and run it
-cp fdesc-package.sh ~
-cd ~
-./fdesc-package.sh
-"
+#
+# This file is generated throw deploy process
+# DO NOT EDIT MANUALLY!
+# Copy this file in ~ and run it
+# cp fdesc-package.sh ~
+# cd ~
+# ./fdesc-package.sh
 
 
 # setuptree

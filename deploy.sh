@@ -28,15 +28,13 @@ rm -rf $NAME-$VERSION
 touch $NAME-package.sh
 chmod 755 $NAME-package.sh
 __usage="
-
-\"""""
-This file is generated throw deploy process
-DO NOT EDIT MANUALLY!
-Copy this file in ~ and run it
-cp $NAME-package.sh ~
-cd ~
-./$NAME-package.sh
-""""\"
+#
+# This file is generated throw deploy process
+# DO NOT EDIT MANUALLY!
+# Copy this file in ~ and run it
+# cp $NAME-package.sh ~
+# cd ~
+# ./$NAME-package.sh
 
 
 # setuptree
