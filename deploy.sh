@@ -24,10 +24,10 @@ cp archive/v$VERSION/$NAME-$VERSION.$RELEASE.tar.gz archive/v$VERSION/$NAME-$VER
 # """ Clean UP """
 rm -rf $NAME-$VERSION
 
-# """ echo packagin command """
+# """ Create package.sh """
 touch $NAME-package.sh
 chmod 755 $NAME-package.sh
-__usage="
+__package="
 #
 # This file is generated throw deploy process
 # DO NOT EDIT MANUALLY!
@@ -56,9 +56,14 @@ rpmlint ~/rpmbuild/SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm
 rpmbuild -bb ~/rpmbuild/SPECS/$NAME.spec
 rpmlint ~/rpmbuild/RPMS/x86_64/$NAME-$VERSION-$RELEASE.$TARGET.$ARCH.rpm
 
+# Building in Copr
+copr-cli build $NAME ~/rpmbuild/SRPMS/$NAME-$VERSION-$RELEASE.$TARGET.src.rpm
 
 "
-echo "$__usage" > $NAME-package.sh
+echo "$__package" > $NAME-package.sh
+
+
+
 
 # """ Push "
 git add .

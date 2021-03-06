@@ -27,5 +27,7 @@ rpmlint ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
 rpmbuild -bb ~/rpmbuild/SPECS/fdesc.spec
 rpmlint ~/rpmbuild/RPMS/x86_64/fdesc-0-1.fc30.x86_64.rpm
 
+# Building in Copr
+copr-cli build fdesc ~/rpmbuild/SRPMS/fdesc-0-1.fc30.src.rpm
 
 
