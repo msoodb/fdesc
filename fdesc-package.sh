@@ -1,6 +1,11 @@
 
 # This file is generated throw deploy process
 # DO NOT EDIT MANUALLY!
+# Copy this file in ~ and run it
+
+# cp "$NAME-package.sh" ~
+# cd ~
+# ./fdesc-package.sh
 
 
 # setuptree
