@@ -35,6 +35,11 @@ chmod 755 $NAME-package.sh
 echo "" > $NAME-package.sh
 echo "# This file is generated throw deploy process" >> $NAME-package.sh
 echo "# DO NOT EDIT MANUALLY!" >> $NAME-package.sh
+echo "# Copy this file in ~ and run it" >> $NAME-package.sh
+echo "" >> $NAME-package.sh
+echo '# cp "$NAME-package.sh" ~' >> $NAME-package.sh
+echo "# cd ~" >> $NAME-package.sh
+echo "# ./$NAME-package.sh" >> $NAME-package.sh
 echo "" >> $NAME-package.sh
 echo "" >> $NAME-package.sh
 echo "# setuptree" >> $NAME-package.sh
