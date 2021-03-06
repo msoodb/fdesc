@@ -32,6 +32,10 @@ git push origin master
 # """ echo packagin command """
 touch $NAME-packag.sh
 chmod 755 $NAME-packag.sh
+echo "" > $NAME-packag.sh
+echo "# This file is generated throw deploy process" >> $NAME-packag.sh
+echo "# DO NOT EDIT MANUALLY!" >> $NAME-packag.sh
+echo "" >> $NAME-packag.sh
 echo "rm -rf ~/rpmbuild" > $NAME-packag.sh
 echo "rpmdev-setuptree" >> $NAME-packag.sh
 echo "wget -O ~/rpmbuild/SPECS/$NAME.spec https://raw.githubusercontent.com/msoodb/$NAME/master/$NAME.spec" >> $NAME-packag.sh
