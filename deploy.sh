@@ -7,7 +7,7 @@ make clean
 NAME=fdesc
 VERSION=0
 RELEASE=1
-TARGET=fc32
+TARGET=fc34
 ARCH=x86_64
 
 # """ Create tar file """
