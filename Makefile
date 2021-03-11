@@ -5,8 +5,6 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:.c=.o)
 TARGET = fdesc
 
-.PHONY: clean
-
 $(TARGET): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
@@ -15,5 +13,6 @@ $(TARGET): $(OBJ)
 # 	mkdir -p %{buildroot}%{_bindir}	
 #  	install -p -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
+.PHONY: clean
 clean:
 	rm -f $(OBJ) $(TARGET)
