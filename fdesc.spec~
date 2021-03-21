@@ -18,7 +18,8 @@ Fdesc tools get a number for characters count and generate fake description.
 %autosetup
 
 %build	
-%set_build_flags
+export CFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags}"
 %make_build
 
 %install
