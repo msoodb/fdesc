@@ -13,11 +13,11 @@ BuildRequires:  make
 %description
 Fdesc tools get a number for characters count and generate fake description.
 
-%prep	
+%prep
 %global _hardened_build 1
 %autosetup
 
-%build	
+%build
 %set_build_flags
 %make_build
 
