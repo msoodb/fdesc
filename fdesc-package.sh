@@ -14,7 +14,7 @@ rpmdev-setuptree
 
 # get spec and source
 wget -O ~/rpmbuild/SPECS/fdesc.spec https://raw.githubusercontent.com/msoodb/fdesc/master/fdesc.spec
-wget -O ~/rpmbuild/SOURCES/fdesc-0.tar.gz https://raw.githubusercontent.com/msoodb/fdesc/master/archive/v0/fdesc-0.tar.gz
+wget -O ~/rpmbuild/SOURCES/fdesc-0.tar.gz https://github.com/msoodb/fdesc/archive/refs/tags/v0.1.tar.gz
 
 # lint spec
 rpmlint ~/rpmbuild/SPECS/fdesc.spec
